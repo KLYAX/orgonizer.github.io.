@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Органайзер</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Страница авторизации -->
+    <div id="auth-page" class="page">
+        <div class="auth-container">
+            <h1>Добро пожаловать!</h1>
+            <div class="auth-form">
+                <input type="text" id="username" placeholder="Имя пользователя">
+                <input type="password" id="password" placeholder="Пароль">
+                <button id="login-btn" class="auth-btn">Войти</button>
+                <button id="register-btn" class="auth-btn secondary">Зарегистрироваться</button>
+                <p id="auth-message" class="message"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основное приложение -->
+    <div id="app-page" class="page hidden">
+        <header class="app-header">
+            <h1>Органайзер</h1>
+            <button id="logout-btn" class="logout-btn">Выйти</button>
+        </header>
+
+        <div class="app-container">
+            <div class="tabs">
+                <button class="tab active" data-tab="notes">Заметки</button>
+                <button class="tab" data-tab="calendar">Календарь</button>
+            </div>
+
+            <div id="notes-content" class="tab-content active">
+                <textarea id="notes-text" placeholder="Введите ваши заметки здесь..."></textarea>
+                <button id="save-notes" class="save-btn">Сохранить заметки</button>
+            </div>
+
+            <div id="calendar-content" class="tab-content">
+                <div class="calendar-controls">
+                    <button id="prev-month" class="nav-btn">←</button>
+                    <h2 id="current-month"></h2>
+                    <button id="next-month" class="nav-btn">→</button>
+                    <button id="save-tasks" class="save-btn">Сохранить задачи</button>
+                </div>
+                <div id="calendar-view" class="calendar-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

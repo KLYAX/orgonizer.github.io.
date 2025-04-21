@@ -1,0 +1,357 @@
+/* Общие стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease-in-out;
+}
+
+/* Утренний фон (по умолчанию) */
+body.morning-bg {
+    background-image: url('https://cdn.tripster.ru/thumbs2/c1353658-860d-11ef-bc31-e6842c4ef259.1220x600.jpeg');
+}
+
+/* Дневной фон (после 13:00) */
+body.afternoon-bg {
+    background-image: url('https://i.pinimg.com/736x/f3/b6/23/f3b623ccac6782b302f7947051b54474.jpg');
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Страница авторизации */
+#auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-container h1 {
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.auth-form input:focus {
+    border-color: #6e8efb;
+    outline: none;
+}
+
+.auth-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6e8efb;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #5a7bf0;
+    -webkit-transform: rotateZ(5deg);
+    -ms-transform: rotateZ(5deg);
+    transform: rotateZ(5deg);
+}
+
+.auth-btn.secondary {
+    background-color: #f5f7fa;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.auth-btn.secondary:hover {
+    background-color: #eaeef5;
+    -webkit-transform: rotateZ(5deg);
+    -ms-transform: rotateZ(5deg);
+    transform: rotateZ(5deg);
+}
+
+.message {
+    margin-top: 10px;
+    color: #e74c3c;
+    font-size: 14px;
+}
+
+/* Основное приложение */
+#app-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.app-header h1 {
+    color: #444;
+}
+
+.logout-btn {
+    padding: 8px 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+    -webkit-transform: rotateZ(5deg);
+    -ms-transform: rotateZ(5deg);
+    transform: rotateZ(5deg);
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.tab.active {
+    color: #6e8efb;
+    border-bottom-color: #6e8efb;
+    font-weight: 500;
+}
+
+.tab:hover:not(.active) {
+    color: #444;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Стили для заметок */
+#notes-text {
+    width: 100%;
+    height: 400px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#notes-text:focus {
+    border-color: #6e8efb;
+    outline: none;
+}
+
+.save-btn {
+    padding: 12px 25px;
+    background-color: #6e8efb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-btn:hover {
+    background-color: #5a7bf0;
+    -webkit-transform: rotateZ(5deg);
+    -ms-transform: rotateZ(5deg);
+    transform: rotateZ(5deg);
+}
+
+/* Стили для календаря */
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.calendar-controls h2 {
+    color: #444;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.nav-btn {
+    padding: 8px 15px;
+    background-color: #f5f7fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #eaeef5;
+    -webkit-transform: rotateZ(5deg);
+    -ms-transform: rotateZ(5deg);
+    transform: rotateZ(5deg);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.calendar-day {
+    background: rgba(250, 69, 190, 0.397);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    min-height: 150px;
+}
+
+.calendar-day-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.day-tasks {
+    min-height: 100px;
+    padding: 8px;
+    border: 1px dashed #ddd;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+}
+
+.day-tasks:focus {
+    border-color: #6e8efb;
+}
+
+.current-day {
+    background-color: #e8f5e9;
+    border: 2px solid #6e8efb;
+}
+
+.other-month {
+    opacity: 0.6;
+}
+
+/* Анимация сообщений */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.message-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    border-radius: 5px;
+    color: white;
+    z-index: 1000;
+    animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+}
+
+.message-success {
+    background-color: #2ecc71;
+}
+
+.message-error {
+    background-color: #e74c3c;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 30px 20px;
+    }
+
+    .calendar-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .tabs {
+        justify-content: center;
+    }
+    
+    .calendar-controls {
+        justify-content: center;
+    }
+    
+    .calendar-controls h2 {
+        order: -1;
+        width: 100%;
+        text-align: center;
+    }
+}
